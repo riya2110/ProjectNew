@@ -1,0 +1,46 @@
+int large(root,item)
+{
+	p = root;
+	while(p!=NULL && p->info!=item)
+	{
+		if(p->info>item)
+		{
+			p = p->left;
+		}
+		else
+		{
+			p=p->right;
+		}
+	}
+
+	if(p==NULL){
+		cout<<"NOT FOUND";
+	}
+	else{
+		cout<<"FOUND";
+		int x = height(p);
+		cout<<x;
+	}
+}
+
+int height(root)
+{
+	if(root==NULL)
+	{
+		return 0;
+	}
+
+	else
+	{
+		L=height(root->left);
+		R=height(root->right);
+		if(L<R)	
+		{
+			return L+1;
+
+		}
+
+		else
+		return R+1;
+	}
+}
